@@ -26,7 +26,7 @@ body {
 #menu {  
   align-items: center;
   display: flex;
-  height: 100vh;
+  height: 200vh;
   width: 100vw;
 }
 
@@ -75,7 +75,7 @@ body {
   );
   background-position: 0% 0%;
   background-size: 12vmin 12vmin;
-  height: 100vh;
+  height: 200vh;
   left: 0px;
   position: absolute;
   top: 0px;
@@ -87,10 +87,10 @@ body {
 }
 
 #menu-background-image {
-  background-image: url("Look\ Back.png");
+  background-image: url("ryan-kim-ADvoB9pDkow-unsplash.jpg");
   background-position: center 40%;
   background-size: 110vmax;
-  height: 100%;
+  height: 220%;
   left: 0px;  
   opacity: 0.15;
   position: absolute;
