@@ -1,85 +1,43 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Conversion Tool</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="conversion.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="conversion.js" defer></script>
+    <title>Document</title>
 </head>
-
 <body>
 
-    <h1>Conversion Tool</h1>
+    <div id="tiles"></div>
 
-    <div class="container">
+    <h1 id="title" class="centered">
+        
+    I trying to convert<br>    
+    <span class="fancy">Celsius to Fahrenheit,</span>
+    but it's just not warming up to me.
+    </h1>
 
-        <!-- Celsius to Fahrenheit -->
-        <div class="box">
-            <h2>Celsius to Fahrenheit</h2>
+    
 
-            <label for="n1">Celsius:</label>
-            <input id="n1" type="number">
 
-            <div class="buttons">
-                <button onclick="computeCelsiustoFahrenheit()">Compute</button>
-                <button onclick="clearvaluesCtF()">Clear</button>
-            </div>
 
-            <label id="Fahrenheit">Fahrenheit:</label>
-            <input id="fahrenheit" type="number" readonly>
-        </div>
+    
+    <div class="meta-link" class="w3-button w3-green w3-large">
+        <div id = "d1" class="box standard purple">
 
-        <!-- Fahrenheit to Celsius -->
-        <div class="box">
-            <h2>Fahrenheit to Celsius</h2>
+		<label for ="n1" class="stylish"> Celsius: </label>
+		<input id ="n1" name="n1" type="number">
 
-            <label for="n2">Fahrenheit:</label>
-            <input id="n2" type="number">
+		<button class="stylish" onclick="computeCelsiustoFahrenheit()"> Compute Fahrenheit </button>
+		<button  class="stylish" onclick="clearvaluesCtF()"> Clear Values </button>
+		<br>
+		<label for ="fahrenheit" class="stylish" id="Fahrenheit"> Fahrenheit: </label>
+		<input id ="fahrenheit" class="stylish" name="fahrenheit" type="number" readonly>
+	</div>
 
-            <div class="buttons">
-                <button onclick="computeFahrenheittoCelsius()">Compute</button>
-                <button onclick="clearvaluesFtC()">Clear</button>
-            </div>
-
-            <label id="Celsius">Celsius:</label>
-            <input id="celsius" type="number" readonly>
-        </div>
-
-        <!-- Meters to Feet -->
-        <div class="box">
-            <h2>Meters to Feet</h2>
-
-            <label for="n3">Meters:</label>
-            <input id="n3" type="number">
-
-            <div class="buttons">
-                <button onclick="computeMeterstoFeet()">Compute</button>
-                <button onclick="clearvaluesMtFt()">Clear</button>
-            </div>
-
-            <label id="Feet">Feet:</label>
-            <input id="feet" type="number" readonly>
-        </div>
-
-        <!-- Feet to Meters -->
-        <div class="box">
-            <h2>Feet to Meters</h2>
-
-            <label for="n4">Feet:</label>
-            <input id="n4" type="number">
-
-            <div class="buttons">
-                <button onclick="computeFeettoMeters()">Compute</button>
-                <button onclick="clearvaluesFttoM()">Clear</button>
-            </div>
-
-            <label id="Meters">Meters:</label>
-            <input id="meters" type="number" readonly>
-        </div>
-
-    </div>
-
-    <div class="home-link">
-        <a href="index.html">Start Menu</a>
     </div>
 
 </body>
