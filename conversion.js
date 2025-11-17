@@ -1,67 +1,82 @@
-// Celsius → Fahrenheit
-function computeCelsiustoFahrenheit() {
-    let c = document.getElementById("n1").value * 1;
-    let f = (c * 9/5) + 32;
+const wrapper = document.getElementById("tiles");
 
-    document.getElementById("Fahrenheit").innerHTML = 
-        'The Fahrenheit of ' + c + ' (Celsius) is:';
+let columns = 0,
+    rows = 0,
+    toggled = false;
 
-    document.getElementById("fahrenheit").value = f;
+const toggle = () => {
+  toggled = !toggled;
+  
+  document.body.classList.toggle("toggled");
 }
+
+const handleOnClick = index => {
+  toggle();
+  
+  anime({
+    targets: ".tile",
+    opacity: toggled ? 0 : 1,
+    delay: anime.stagger(50, {
+      grid: [columns, rows],
+      from: index
+    })
+  });
+}
+
+const createTile = index => {
+  const tile = document.createElement("div");
+  
+  tile.classList.add("tile");
+  
+  tile.style.opacity = toggled ? 0 : 1;
+  
+  tile.onclick = e => handleOnClick(index);
+  
+  return tile;
+}
+
+const createTiles = quantity => {
+  Array.from(Array(quantity)).map((tile, index) => {
+    wrapper.appendChild(createTile(index));
+  });
+}
+
+const createGrid = () => {
+  wrapper.innerHTML = "";
+  
+  const size = document.body.clientWidth > 800 ? 100 : 50;
+  
+  columns = Math.floor(document.body.clientWidth / size);
+  rows = Math.floor(document.body.clientHeight / size);
+  
+  wrapper.style.setProperty("--columns", columns);
+  wrapper.style.setProperty("--rows", rows);
+  
+  createTiles(columns * rows);
+}
+
+createGrid();
+
+window.onresize = () => createGrid();
+
+
+function computeCelsiustoFahrenheit() {
+    const celsiusInput = document.getElementById("n1");
+    const celsiusValue = parseFloat(celsiusInput.value);
+    
+    const fahrenheitInput = document.getElementById("fahrenheit");
+
+    if (isNaN(celsiusValue)) {
+        fahrenheitInput.value = ""; 
+        alert("Please enter a valid number for Celsius.");
+        return; 
+    }
+    const fahrenheitValue = (celsiusValue * 9/5) + 32;
+    fahrenheitInput.value = fahrenheitValue.toFixed(2);
+}
+
 
 function clearvaluesCtF() {
-    document.getElementById("n1").value = '';
-    document.getElementById("Fahrenheit").innerHTML = 'Fahrenheit:';
-    document.getElementById("fahrenheit").value = '';
-}
-
-// Fahrenheit → Celsius
-function computeFahrenheittoCelsius() {
-    let f = document.getElementById("n2").value * 1;
-    let c = (f - 32) * 5/9;
-
-    document.getElementById("Celsius").innerHTML = 
-        'The Celsius of ' + f + ' (Fahrenheit) is:';
-
-    document.getElementById("celsius").value = c;
-}
-
-function clearvaluesFtC() {
-    document.getElementById("n2").value = '';
-    document.getElementById("Celsius").innerHTML = 'Celsius:';
-    document.getElementById("celsius").value = '';
-}
-
-// Meters → Feet
-function computeMeterstoFeet() {
-    let m = document.getElementById("n3").value * 1;
-    let ft = m * 3.281;
-
-    document.getElementById("Feet").innerHTML = 
-        'The Feet of ' + m + ' (Meters) is:';
-
-    document.getElementById("feet").value = ft;
-}
-
-function clearvaluesMtFt() {
-    document.getElementById("n3").value = '';
-    document.getElementById("Feet").innerHTML = 'Feet:';
-    document.getElementById("feet").value = '';
-}
-
-// Feet → Meters
-function computeFeettoMeters() {
-    let ft = document.getElementById("n4").value * 1;
-    let m = ft / 3.281;
-
-    document.getElementById("Meters").innerHTML = 
-        'The Meters of ' + ft + ' (Feet) is:';
-
-    document.getElementById("meters").value = m;
-}
-
-function clearvaluesFttoM() {
-    document.getElementById("n4").value = '';
-    document.getElementById("Meters").innerHTML = 'Meters:';
-    document.getElementById("meters").value = '';
+    document.getElementById("n1").value = "";
+    document.getElementById("fahrenheit").value = "";
 }
