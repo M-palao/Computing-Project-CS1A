@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="factorial.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="factorial.js" defer></script>
+    <title>Factorial</title>
+</head>
+<body>
+
+    <div id="tiles"></div>
+
+    <h1 id="title" class="centered">
+    <span class="fancy">Factorials </span>are just very excited numbers!
+    </h1>
+
+    
+
+
+
+    
+    <div id="unveil" class="meta-link" class="w3-button w3-green w3-large">
+
+        <div id = "d1" class="box standard purple">
+        
+            <label for ="n1" class="stylish"> Enter a number: </label>
+            <input id ="n1" class="stylish"  name="n1" type="number">
+
+            <button type="button" class="stylish" onclick="computeFactorial()">Compute Factorial</button>
+            
+            <br>
+            
+            <label class="stylish"  for="output-factorial">Factorial:</label>
+            <input id="output-factorial" class="stylish"  name="factorial-result" type="number" readonly>
+            <button  class="stylish" onclick="clearvaluesCtF()"> Clear Values </button>
+            <button class="stylish" onclick="document.location='index.html'">Homepage</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
