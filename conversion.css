@@ -1,6 +1,6 @@
 :root {
-  --g1: rgb(180, 176, 176);
-  --g2: rgb(56, 42, 47);
+  --g1: rgba(213, 202, 228, 1);
+  --g2: rgba(229, 148, 98, 1);
 }
 
 @keyframes background-pan {
@@ -104,7 +104,6 @@ body.toggled > #tiles > .tile:hover {
   z-index: 1;
 }
 
-/* -- YouTube Link Styles -- */
 
 body.menu-toggled > .meta-link > span {
   color: rgb(30, 30, 30);
@@ -173,6 +172,7 @@ box-sizing: border-box;
     padding: 15px;
     margin: 20px auto;
     width: fit-content;
+    padding-bottom: 325px;
 }
 
 #d1 {
