@@ -71,3 +71,51 @@ createGrid();
 
 window.onresize = () => createGrid();
 
+function computeIncomeTax() {
+    const taxableIncomeInput = document.getElementById('taxableIncome');
+    const taxableIncome = parseFloat(taxableIncomeInput.value);
+    
+    const incomeTaxOutput = document.getElementById('incomeTaxOutput');
+    let incomeTax = 0;
+
+    if (isNaN(taxableIncome) || taxableIncome < 0) {
+        alert("Please enter a valid, non-negative number for Taxable Income.");
+        incomeTaxOutput.value = '';
+        return; 
+    }
+
+    if (taxableIncome <= 250000) {
+        incomeTax = 0;
+    
+    } else if (taxableIncome <= 400000) {
+        const excess = taxableIncome - 250000;
+        incomeTax = excess * 0.20;
+    
+    } else if (taxableIncome <= 800000) {
+        const basicTax = 30000;
+        const excess = taxableIncome - 400000;
+        incomeTax = basicTax + (excess * 0.25);
+    
+    } else if (taxableIncome <= 2000000) {
+        const basicTax = 130000;
+        const excess = taxableIncome - 800000;
+        incomeTax = basicTax + (excess * 0.30);
+    
+    } else if (taxableIncome <= 8000000) {
+        const basicTax = 490000;
+        const excess = taxableIncome - 2000000;
+        incomeTax = basicTax + (excess * 0.32);
+    
+    } else {
+        const basicTax = 2410000;
+        const excess = taxableIncome - 8000000;
+        incomeTax = basicTax + (excess * 0.35);
+    }
+
+    incomeTaxOutput.value = incomeTax.toFixed(2);
+}
+
+function clearValuesIncomeTax() {
+    document.getElementById('taxableIncome').value = '';
+    document.getElementById('incomeTaxOutput').value = '';
+}
