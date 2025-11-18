@@ -1,3 +1,7 @@
+const toggledDiv = document.getElementById('unveil');
+toggledDiv.style.display = 'none';
+
+
 const wrapper = document.getElementById("tiles");
 
 let columns = 0,
@@ -12,6 +16,14 @@ const toggle = () => {
 
 const handleOnClick = index => {
   toggle();
+  // Check the current display state
+  if (toggledDiv.style.display === 'none' || toggledDiv.style.display === '') {
+    // If hidden, show it
+    toggledDiv.style.display = 'block'; 
+  } else {
+    // If visible, hide it
+    toggledDiv.style.display = 'none';
+  }
   
   anime({
     targets: ".tile",
