@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fahrenheit.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="fahrenheit.js" defer></script>
+    <title>Fahrenheit to Celsius</title>
+</head>
+<body>
+
+    <div id="tiles"></div>
+
+    <h1 id="title" class="centered">
+    Ditch 
+    <span class="fancy">Fahrenheit, </span>
+    think more Celsius!
+    </h1>
+
+    
+
+
+
+    
+    <div id="unveil" class="meta-link" class="w3-button w3-green w3-large">
+
+        <div id = "d1" class="box standard purple ">
+
+            <label for ="n1" class="stylish"> Fahrenheit: </label>
+            <input id ="n1" name="n1" type="number">
+
+            <button class="stylish" onclick="computeFahrenheittoCelsius()"> Compute Celsius </button>
+            <button class="stylish" onclick="clearvaluesCtF()"> Clear Values </button>
+            <br>
+            <label for ="celsius" class="stylish" id="Celsius"> Celsius: </label>
+            <input id ="celsius" class="stylish" name="celsius" type="number" readonly>
+            <button class="fancy" onclick="document.location='index.html'">Homepage</button>
+	    </div>
+
+    </div>
+
+</body>
+</html>
