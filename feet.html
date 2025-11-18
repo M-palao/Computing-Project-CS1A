@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="feet.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="feet.js" defer></script>
+    <title>Feet to Meters</title>
+</head>
+<body>
+
+    <div id="tiles"></div>
+
+    <h1 id="title" class="centered">
+        <span class="fancy">Feet </span> are cute… meters are precise.
+    </h1>
+
+    
+
+
+
+    
+    <div id="unveil" class="meta-link" class="w3-button w3-green w3-large">
+
+        <div class="input-group">
+            <label class="stylish" for="feet-input">Feet:</label>
+            <br>
+            <input id="feet-input" name="feet-input" type="number">
+        </div>
+
+        <div class="button-group">
+            <button class="stylish" type="button" onclick="computeFeettoMeters()">Compute Meters</button>
+            <button class="stylish" type="button" onclick="clearvaluesFttoM()">Clear Values</button>
+        </div>
+
+        <div class="output-group">
+            <label class="stylish" for="meters-output">Meters:</label>
+            <br>
+            <input id="meters-output" name="meters-output" type="number" readonly>
+            <br>
+            <button class="fancy" onclick="document.location='index.html'">Homepage</button>
+        </div>
+    </div>  
+        
+
+    </div>
+
+</body>
+</html>
