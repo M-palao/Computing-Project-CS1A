@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="payroll.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="payroll.js" defer></script>
+    <title>Celsius to Fahrenheit</title>
+</head>
+<body>
+
+    <div id="tiles"></div>
+
+    <h1 id="title" class="centered">
+        Late submissions always face a rough  <span class="fancy">pay-roll </span>  path
+    </h1>
+
+    
+
+
+
+    
+    <div id="unveil" class="meta-link" class="w3-button w3-green w3-large">
+    <div class="parent">
+
+    <div class="container1">
+        <div id="n1">
+                <label for="name">Employee Name:</label><br>
+                <input id="name" name="name" type="text" value="New Employee">
+                <br>
+                <label for="days_worked">Days Worked:</label><br>
+                <input id="days_worked" name="days_worked" type="number" value="5">
+                <br>
+                <label for="daily_rate">Daily Rate:</label> <br>
+                <input id="daily_rate" name="daily_rate" type="number" value="100.00">
+                <br>
+                <label for="deduct">Deduction Amount:</label><br>
+                <input id="deduct" name="deduct" type="number" value="50.00">
+
+                <br><br>
+                <button onclick="addEmployee()">+ Add Employee</button>
+                <button onclick="deleteEmployee()">- Delete by No.</button>
+            </div>
+            <br>
+    </div>
+
+    <div class="container2">
+    <table class="container2">
+        <thead>
+            <tr>
+                <td>Emp. No.</td>
+                <td>Employee Name</td>
+                <td>Days Worked</td>
+                <td>Daily Rate</td>
+                <td>Gross Pay</td>
+                <td>Deductions</td>
+                <td>Net Pay</td>
+            </tr>
+        </thead>
+        <tbody id="payroll-body">
+            </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="fancy" id="gross-total" class="ndata">0.00</td>
+                <td class="fancy" id="deduct-total" class="ndata">0.00</td>
+                <td class="fancy" id="net-total" class="ndata">0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+    </div>
+
+    </div>
+
+</body>
+</html>
